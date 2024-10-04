@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Day-1</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- <div id="parent">
+        <div id="chid-1">
+            <div id="child-2">
+                <h1></h1>
+                <h2></h2>
+            </div>
+        </div>
+
+         <div id="chid-1">
+            <div id="child-2">
+                <h1></h1>
+                <h2></h2>
+            </div>
+        </div>
+
+    </div> -->
+
+    <!--     
+const heading=document.createElement("h1");
+heading.innerHTML="i'm from javascript";
+const optional=document.getElementById("root");
+optional.appendChild(heading); -->
+    <!-- <script src="./index.js"></script> -->
+
+    <script>
+      const heading = React.createElement(
+        "div",
+        { id: "parent" },
+        [React.createElement(
+          "div",
+          { id: "child-1" },
+          React.createElement(
+            "div",
+            { id: "child-2" },
+            [React.createElement("h1", {}, "i'm from deep nested"),
+            React.createElement("h2", {}, "i'm from deep nested")]
+          )
+        ) ,
+    
+        React.createElement(
+          "div",
+          { id: "child-3" },
+          React.createElement(
+            "div",
+            { id: "child-4" },
+            [React.createElement("h1", {}, "i'm from deep nested"),
+            React.createElement("h2", {}, "i'm from deep nested")]
+          )
+        )]
+    
+    
+      );
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(heading);
+
+    </script>
+  </body>
+</html>
